@@ -1,0 +1,14 @@
+Koans
+  http://clojurekoans.com/
+
+Docs
+  root:
+    https://clojuredocs.org
+  pattern:
+    https://clojuredocs.org/:namespace
+    https://clojuredocs.org/:namespace/:function
+  eg:
+    https://clojuredocs.org/clojure.core/map
+
+For practical development, look into a "reloaded workflow"
+  https://www.google.com/#q=reloaded%20workflow%20clojure
