@@ -1,5 +1,6 @@
 (ns koans.12-sequence-comprehensions
-  (:require [koan-engine.core :refer :all]))
+  (:require [koan-engine.core :as koan :refer [__ ___]]
+            [josh :refer :all]))
 
 (meditations
   "Sequence comprehensions can bind each element in turn to a symbol"

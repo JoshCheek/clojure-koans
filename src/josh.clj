@@ -1,6 +1,5 @@
 (ns josh
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [clojure.string :as string]))
+  (:require [koan-engine.core :as koan]))
 
 (defmacro meditations [& tests]
   (let [ new-tests

@@ -1,5 +1,6 @@
 (ns koans.20-java-interop
-  (:require [koan-engine.core :refer :all]))
+  (:require [koan-engine.core :as koan :refer [__ ___]]
+            [josh :refer :all]))
 
 (meditations
   "You may have done more with Java than you know"

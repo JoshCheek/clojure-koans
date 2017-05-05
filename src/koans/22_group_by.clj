@@ -1,5 +1,6 @@
 (ns koans.22-group-by
-  (:require [koan-engine.core :refer :all]))
+  (:require [koan-engine.core :as koan :refer [__ ___]]
+            [josh :refer :all]))
 
 (defn get-odds-and-evens [coll]
   (let [{odds true evens false} (group-by __ coll)]
