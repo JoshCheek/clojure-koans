@@ -18,15 +18,18 @@ BEGIN {
   koan_dir      = File.join ENV['PWD'], relative_path
 
   def redraw(filenames)
-    print "\e[H\e[2J" # clear screen
-    filenames.each_with_index do |(name, status), i|
+    print "\e[3H\e[J" # clear screen
+    filenames.each_with_index do |(filename, status), i|
       case status
       when :pass    then mark = "\e[32m√"
       when :fail    then mark = "\e[31mx"
       when :pending then mark = "\e[33m?"
       else raise "Not a status: #{status.inspect}"
       end
-      puts "#{mark}  #{name}\e[0m"
+      name = filename
+              .gsub(/_(.)/) { " #$1".upcase }
+              .gsub(/^\d+ |\.clj$/, '')
+      puts "#{mark} #{name}\e[0m"
     end
   end
 }
