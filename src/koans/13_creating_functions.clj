@@ -1,5 +1,6 @@
 (ns koans.13-creating-functions
-  (:require [koan-engine.core :refer :all]))
+  (:require [koan-engine.core :as koan :refer [__ ___]]
+            [josh :refer :all]))
 
 (defn square [x] (* x x))
 
