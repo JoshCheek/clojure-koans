@@ -1,6 +1,5 @@
 (ns koans.04-vectors
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [josh :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (meditations
   "You can use vectors in clojure as array-like structures"

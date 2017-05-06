@@ -1,6 +1,5 @@
 (ns koans.15-destructuring
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [josh :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (def test-address
   {:street-address "123 Test Lane"

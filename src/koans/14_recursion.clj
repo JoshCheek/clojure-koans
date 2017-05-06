@@ -1,6 +1,5 @@
 (ns koans.14-recursion
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [josh :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (defn is-even? [n]
   (if (= n 0)

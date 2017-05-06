@@ -1,8 +1,6 @@
 (ns koans.02-strings
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [clojure.string :as string]
-            [josh :refer :all]
-            ))
+  (:require [koan-engine.core :refer :all]
+            [clojure.string :as string]))
 
 
 (meditations

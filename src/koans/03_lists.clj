@@ -1,6 +1,5 @@
 (ns koans.03-lists
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [josh :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (meditations
   "Lists can be expressed by function or a quoted form"

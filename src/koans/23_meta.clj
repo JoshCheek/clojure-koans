@@ -1,6 +1,5 @@
 (ns koans.23-meta
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [josh :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (def giants
   (with-meta 'Giants

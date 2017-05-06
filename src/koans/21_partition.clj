@@ -1,6 +1,5 @@
 (ns koans.21-partition
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [josh :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (meditations
   "To split a collection you can use the partition function"

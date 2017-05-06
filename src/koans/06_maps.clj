@@ -1,6 +1,5 @@
 (ns koans.06-maps
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [josh :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (meditations
   "Don't get lost when creating a map"

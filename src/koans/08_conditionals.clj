@@ -1,6 +1,5 @@
 (ns koans.08-conditionals
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [josh :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (defn explain-exercise-velocity [exercise-term]
   (case exercise-term

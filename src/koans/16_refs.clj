@@ -1,6 +1,5 @@
 (ns koans.16-refs
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [josh :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (def the-world (ref "hello"))
 (def bizarro-world (ref {}))

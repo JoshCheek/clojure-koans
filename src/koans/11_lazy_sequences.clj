@@ -1,6 +1,5 @@
 (ns koans.11-lazy-sequences
-  (:require [koan-engine.core :as koan :refer [__ ___]]
-            [josh :refer :all]))
+  (:require [koan-engine.core :refer :all]))
 
 (meditations
   "There are many ways to generate a sequence"
