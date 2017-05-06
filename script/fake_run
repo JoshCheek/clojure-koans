@@ -6,10 +6,10 @@ fake() {
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/02_strings.clj...'
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/03_lists.clj...'
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/04_vectors.clj...'
-  sleep 0.5
+  # sleep 0.5
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/05_sets.clj...'
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/06_maps.clj...'
-  sleep 0.5
+  # sleep 0.5
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/07_functions.clj...'
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/08_conditionals.clj...'
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/09_higher_order_functions.clj...'
@@ -18,7 +18,7 @@ fake() {
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/12_sequence_comprehensions.clj...'
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/13_creating_functions.clj...'
   echo 'Considering /Users/josh/deleteme/clojure-koans/src/koans/14_recursion.clj...'
-  sleep 1
+  # sleep 1
   echo ''
   echo 'Now meditate upon /Users/josh/deleteme/clojure-koans/src/koans/14_recursion.clj'
   echo '---------------------'

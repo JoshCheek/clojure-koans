@@ -1,13 +1,14 @@
 #!/usr/bin/env ruby -n
 
+# To use:
+#   $ lein koan run | script/hilite
 # Output hilighter for the Clojure koans:
 #   https://github.com/functional-koans/clojure-koans
 # written against git commit
 #   9b3efbb0268794c6f5e5516589bb17ed78000602
+# Screenshot of an older version:
+#   https://gist.github.com/JoshCheek/32b07650aacd7de3586eddc1f9809ddc
 
-# Screenshot of what this does is in resources/hilight.png
-
-# gsub
 BEGIN {
   filenames          = {}
   prev_filename      = nil
@@ -79,8 +80,9 @@ gsub /^clojure\.lang\.ExceptionInfo:\s+(.*)$/,
 
 gsub relative_path, ""
 
-gsub /,\s+compiling:?\(?(.*)\)$/ do
-  filename, lineno, colno = $1.split ":"
+gsub /\s*\{:line (\d+)\}[^(]*\(?(.*)\)$/ do
+  lineno      = $1
+  filename, * = $2.split ":"
   filenames[filename] = :fail
   puts "#{relative_path}\e[31m#{filename}\e[39m:\e[34m#{lineno}\e[0m"
   puts
