@@ -9,41 +9,35 @@
 # Screenshot of an older version:
 #   https://gist.github.com/JoshCheek/32b07650aacd7de3586eddc1f9809ddc
 
+BEGIN { print "\e[?25l" } # hide cursor
+END   { print "\e[?25h" } # show cursor
+
 BEGIN {
-  filenames          = {}
-  prev_filename      = nil
-  cwd                = ENV['PWD'].chomp("/") + "/"
-  saw_relative_path  = false
-  relative_path      = 'src/koans/'
+  filenames     = {}
+  relative_path = 'src/koans/'
+  koan_dir      = File.join ENV['PWD'], relative_path
 
   def redraw(filenames)
-    print "\e[H\e[2J"
+    print "\e[H\e[2J" # clear screen
     filenames.each_with_index do |(name, status), i|
-      nocolor = "\e[0m"
       case status
       when :pass    then mark = "\e[32m√"
       when :fail    then mark = "\e[31mx"
       when :pending then mark = "\e[33m?"
       else raise "Not a status: #{status.inspect}"
       end
-      puts "#{mark}  #{name}#{nocolor}"
+      puts "#{mark}  #{name}\e[0m"
     end
   end
 }
 
-
-# Clear screen when we start
-if $. == 1
-  print "\e[H\e[2J"
-  next
-end
-
-# make all absolute paths relative
-gsub cwd, ''
+# remove paths before filenames
+gsub koan_dir, ''
 
 # Evaluating the list of files
+BEGIN { prev_filename = nil }
 if ~/^Considering\s+(.*\.clj)/
-  filename                 = $1.sub relative_path, ""
+  filename                 = $1
   filenames[prev_filename] = :pass if prev_filename
   filenames[filename]      = :pending
   prev_filename            = filename
@@ -55,7 +49,7 @@ end
 
 # Found a failure
 if ~/meditate upon (.*\.clj)/
-  filename = $1.strip.sub relative_path, ""
+  filename = $1.strip
   filenames[filename] = :fail
   redraw filenames
   next
@@ -69,24 +63,16 @@ if ~/^-+$/
 end
 
 # Error notification
-if ~/assertion failed/i
-  next
-end
+next if ~/assertion failed/i
 
 # Highlight the failed koan name
 gsub /^clojure\.lang\.ExceptionInfo:\s+(.*)$/,
       "\e[41;37m \\1 \e[0m"
 
-
-gsub relative_path, ""
-
-gsub /\s*\{:line (\d+)\}[^(]*\(?(.*)\)$/ do
-  lineno      = $1
-  filename, * = $2.split ":"
-  filenames[filename] = :fail
-  puts "#{relative_path}\e[31m#{filename}\e[39m:\e[34m#{lineno}\e[0m"
-  puts
-  ''
-end
-
+# Extract and print the filename and line number
+gsub /\s*\{:line\s*(\d+)\}[^(]*\(?(.*\.clj).*$/, ""
+lineno, filename = $1, $2
 print
+if lineno && filename
+  puts "", "#{relative_path}\e[31m#{filename}\e[39m:\e[34m#{lineno}\e[0m"
+end
