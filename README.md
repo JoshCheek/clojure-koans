@@ -28,7 +28,7 @@ This is the first strategy: **build yourself tools to improve your feedback and 
 How koans work `(= __ true)`
 ---------------------------
 
-![running with hilite](images/first-failure.png)
+![running with hilite](resources/first-failure.png)
 
 So, this set of koan's name is "Equalities", which means it's probably a bunch of info on how to tell whether two values (or whatever they call their version of things that can be referenced with a variable). The koan says "we shall contemplate truth by testing reality via equality" and it asserts `(= __ true)`.
 
@@ -115,7 +115,7 @@ The word "symbol" here is very intentionally chosen, it comes from a long line o
 Character literals `(= \C (get "Characters" __))`
 -------------------------------------------------
 
-![Character literals](images/char-literals.png)
+![Character literals](resources/char-literals.png)
 
 So, we've moved on to the second set of tests now. We see that "Equalities" are passing and we're now failing on Strings.
 
@@ -354,6 +354,6 @@ Well, clearly it's going to need to be `(square 5)`, and that needs to be in a f
 case statements (the Robert Frost poem)
 ---------------------------------------
 
-![conditional](images/cond.png)
+![conditional](resources/cond.png)
 
 So, `x` is set to `5` by the `let` block, and the result of this `cond` thing needs to be `:your-road`. Cond must be a macro because it's got lists that I
