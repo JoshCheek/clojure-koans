@@ -19,7 +19,7 @@ And you can run the koans with it like this:
 
 ```sh
 clear # this is to move your prompt to the top of the screen
-lein koans run | script/hilite
+lein koan run | script/hilite
 ```
 
 This is the first strategy: **build yourself tools to improve your feedback and address your pain.**
@@ -351,9 +351,8 @@ Well, clearly it's going to need to be `(square 5)`, and that needs to be in a f
    (fn [n] (* n n))))
 ```
 
-case statements (the Robert Frost poem)
----------------------------------------
+Reduce `(reduce (fn [a b] (* a b)) [1 2 3 4])`
+----------------------------------------------
 
-![conditional](resources/cond.png)
-
-So, `x` is set to `5` by the `let` block, and the result of this `cond` thing needs to be `:your-road`. Cond must be a macro because it's got lists that I
+Okay, so reduce is basically `each`, it's your basic iteration function. The problem is that
+but since we don't want to mutate values, we
