@@ -20,8 +20,12 @@
       (recursive-reverse (rest coll))
       [(first coll)])))
 
-(defn factorial [n]
-  (reduce * 1N (range 1 (+ 1 n))))
+(defn factorial
+  ([n] (factorial n 1N))
+  ([n product]
+   (if (= 0 n)
+     product
+     (recur (- n 1) (* product n)))))
 
 (meditations
   "Recursion ends with a base case"
