@@ -83,4 +83,5 @@ end
 if ~/achieved.*enlightenment/
   filenames = filenames.map { |fn, status| [fn, :pass] }.to_h
   redraw filenames
+  print
 end
