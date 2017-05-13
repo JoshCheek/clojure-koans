@@ -79,3 +79,8 @@ print
 if lineno && filename
   puts "", "#{relative_path}\e[31m#{filename}\e[39m:\e[34m#{lineno}\e[0m"
 end
+
+if ~/achieved.*enlightenment/
+  filenames = filenames.map { |fn, status| [fn, :pass] }.to_h
+  redraw filenames
+end
